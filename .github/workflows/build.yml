@@ -1,6 +1,9 @@
 name: Create and publish a Docker image
 
 on:
+  push:
+    branches:
+      - main
   schedule:
     # Bi-daily at 06:00 and 18:00 UTC
     - cron: "0 6,18 * * *"
