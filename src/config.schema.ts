@@ -50,6 +50,13 @@ export const ActualSchema = z.object({
   accounts: z.record(z.string(), z.string()),
 });
 
+export const SureSchema = z.object({
+  serverUrl: z.url({ error: "Invalid Sure server URL" }),
+  apiKey: z.string().min(1, { error: "Sure API key is required" }),
+  apiBasePath: z.string().min(1).optional(),
+  accounts: z.record(z.string(), z.string()),
+});
+
 export const WebPostSchema = z.object({
   url: z.url({ error: "Invalid web post URL" }),
   authorizationToken: z
@@ -99,6 +106,7 @@ export const StorageSchema = z
     azure: AzureSchema.optional(),
     buxfer: BuxferSchema.optional(),
     actual: ActualSchema.optional(),
+    sure: SureSchema.optional(),
     localJson: LocalJsonSchema.optional(),
     webPost: WebPostSchema.optional(),
     sql: SqlStorageSchema.optional(),

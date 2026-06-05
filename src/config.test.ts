@@ -166,6 +166,32 @@ describe("config", () => {
     },
   );
 
+  it.each([...internalUrls, "http://sup2kk:3000"])(
+    "should support internal URL %s for sure.serverUrl",
+    async (url) => {
+      const configWithUrl = {
+        accounts: [{ companyId: "test", password: "pass", userCode: "12345" }],
+        storage: {
+          sure: {
+            serverUrl: url,
+            apiKey: "test-api-key",
+            accounts: {},
+          },
+        },
+        options: baseOptions,
+      };
+
+      process.env = {
+        ...originalEnv,
+        MONEYMAN_CONFIG_PATH: undefined,
+        MONEYMAN_CONFIG: JSON.stringify(configWithUrl),
+      };
+
+      const { config } = await import("./config.js");
+      expect(config.storage.sure?.serverUrl).toBe(url);
+    },
+  );
+
   it("should use MONEYMAN_CONFIG_PATH when provided and MONEYMAN_CONFIG is not set", async () => {
     const configJson = {
       accounts: [{ companyId: "test", password: "pass", userCode: "12345" }],

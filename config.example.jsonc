@@ -23,7 +23,15 @@
     // "telegram": {
     //   "enabled": true
     // },
-    // Other options: googleSheets, ynab, azure, buxfer, actual, webPost, sql
+    // Sure storage - imports transactions to a self-hosted Sure server
+    // "sure": {
+    //   "serverUrl": "http://sup2kk:3000",
+    //   "apiKey": "your-sure-api-key",
+    //   "accounts": {
+    //     "your-moneyman-account-id": "your-sure-account-id"
+    //   }
+    // },
+    // Other options: googleSheets, ynab, azure, buxfer, actual, sure, webPost, sql
   },
   "options": {
     "scraping": {

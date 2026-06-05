@@ -206,6 +206,7 @@ We use Telegram to send you the update status, including support for OTP 2FA wit
 | [YNAB](./docs/ynab.md)                               | Export transactions to YNAB (YouNeedABudget)           |
 | [Buxfer](./docs/buxfer.md)                           | Export transactions to Buxfer                          |
 | [Actual Budget](./docs/actual-budget.md)             | Export transactions to Actual Budget                   |
+| [Sure](./docs/sure.md)                               | Export transactions to Sure                            |
 | [PostgreSQL](./docs/postgresql.md)                   | Persist transactions in a PostgreSQL database          |
 | [Web Post](./docs/web-post.md)                       | Export transactions as a POST request to a web address |
 | [JSON files](./docs/json.md)                         | Export transactions to local JSON files                |
